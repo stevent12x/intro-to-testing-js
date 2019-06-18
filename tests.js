@@ -22,7 +22,7 @@ describe('sayHello', function () {
         expect(typeof sayHello()).toBe("string");
     });
     it('should return the string "Hello, Jane!" when executed', function() {
-        expect(sayHello()).toBe("Hello, Jane!");
+        expect(sayHello("Jane")).toBe("Hello, Jane!");
     });
     it('should return the string "Hello Alex!" when executed', function() {
         expect(sayHello("Alex")).toBe("Hello, Alex!");
@@ -30,7 +30,13 @@ describe('sayHello', function () {
     it('should return the string "Hello, Pat!" when executed', function() {
         expect(sayHello("Pat")).toBe("Hello, Pat!");
     });
-    it('should never return "undefined" when called', function() {
-        expect(sayHello()).not.toBe(undefined);
+    it('should return the string "Hello, World!" when no input is provided', function() {
+        expect(sayHello()).toBe("Hello, World!");
+    });
+    it('should return "Hello, World!" if sayHello(true) is executed', function () {
+        expect(sayHello(true)).toBe("Hello, World!");
+    });
+    it('should return "Hello, World!" id sayHello(false) is executed', function () {
+        expect(sayHello(false)).toBe("Hello, World!");
     });
 })

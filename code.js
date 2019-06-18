@@ -14,8 +14,11 @@
 // }
 
 function sayHello(input) {
-    if (input) {return "Hello, " + input + "!"
+    if (typeof input === "string") {return "Hello, " + input + "!"
+    } else if (typeof input === "boolean") {
+        return "Hello, World!"
     } else {
-    return "Hello, Jane!"
+        return "Hello, World!"
     }
 }
+
